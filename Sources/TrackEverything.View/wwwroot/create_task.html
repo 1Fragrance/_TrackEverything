@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>New task</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="content.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="index.html">Training Task</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/projects.html">Projects</a></li>
+                <li class="active"><a href="/tasks.html">Tasks</a></li>
+                <li><a href="/workers.html">Workers</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container body-content">
+        <div class="page-header">
+            <h1>New Task</h1>
+        </div>
+        <form id="createForm">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="taskName">Name <span style="color:red">*</span></label>
+                    <input type="text"  class="form-control" id="taskName" placeholder="Enter name" required minlength="3"
+                        maxlength="20" pattern="^[a-zA-Z-_]+$" title="Only latin letters">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="taskTime">Hours Estimation</label>
+                    <input type="number" class="form-control" id="taskTime" placeholder="Enter estimation(in hours)"
+                        required autocomplete="off" pattern="^[0-9]+$" title="Only digits">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="taskStartAt">Start At</label>
+                    <input type="text" class="form-control datepicker" id="taskStartAt" style="display:block"
+                        autocomplete="off" pattern="^(19|20)\d\d[- /.](0[1-9]|1[012])[- /.](0[1-9]|[12][0-9]|3[01])$"
+                        title="YYYY-MM-DD">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="taskEndAt">Ends at</label>
+                    <input type="text" class="form-control datepicker" id="taskEndAt" style="display:block"
+                        autocomplete="off" pattern="^^(19|20)\d\d[- /.](0[1-9]|1[012])[- /.](0[1-9]|[12][0-9]|3[01])$"
+                        title="YYYY-MM-DD">
+                </div>
+            </div>
+            <div class="col-md-12 form-group">
+                <label for="taskProjectSelect">Select project</label>
+                <select id="taskProjectSelect" class="form-control">
+                    <option value="0" selected>Not selected</option>
+                </select>
+            </div>
+            <div class="col-md-12 form-group">
+                <label for="taskExecutorsSelect">Select executors</label>
+                <select multiple class="form-control" id="taskExecutorsSelect">
+                </select>
+            </div>
+            <div class="col-md-12">
+                <div class="text-right">
+                    <button type="submit" class="btn btn-primary btn-lg">Create Task</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="navbar-fixed-bottom row-fluid">
+        <div class="navbar-inner">
+            <div class="container">
+                <footer class="page-footer blue pt-4">
+                    <div class="footer-copyright text-center py-3">
+                        <p>� 2018 - Asp.NET Core Web Api</p>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="Scripts/add_task.js"></script>
+    <script src="Scripts/date_validation.js"></script>
+    <script>
+        $(function () {
+            $(".datepicker").datepicker({
+                dateFormat: 'yy-mm-dd'
+            });
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>New Worker</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="content.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="index.html">Training Task</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/projects.html">Projects</a></li>
+                <li><a href="/tasks.html">Tasks</a></li>
+                <li class="active"><a href="/workers.html">Workers</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container body-content">
+        <div class="page-header">
+            <h1>New Worker</h1>
+        </div>
+        <form onsubmit="addWorker(event)">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="workerName">Name <span style="color:red">*</span></label>
+                    <input type="text" class="form-control" id="workerName" placeholder="Enter name" required minlength="3"
+                        maxlength="20" pattern="^[a-zA-Z-]+$" title="Only latin letters">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="workersurname">Surname <span style="color:red">*</span></label>
+                    <input type="text" class="form-control" id="workerSurname" placeholder="Enter surname" required
+                        minlength="3" maxlength="20" pattern="^[a-zA-Z-]+$" title="Only latin letters">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="workerMiddlename">Middlename</label>
+                    <input type="text" class="form-control" id="workerMiddlename" placeholder="Enter middlename"
+                        minlength="3" maxlength="20" pattern="^[a-zA-Z-]+$" title="Only latin letters">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="workerPosition">Position <span style="color:red"> *</span></label>
+                    <input type="text" class="form-control" id="workerPosition" placeholder="Enter position" required
+                        minlength="3" maxlength="20" pattern="^[a-zA-Z0-9-_]+$" title="Only latin letters">
+                </div>
+            </div>
+            <div class="col-md-12 form-group">
+                <label for="selectList">Select Tasks</label>
+                <select id="selectList" multiple class="form-control">
+                </select>
+            </div>
+            <div class="col-md-12">
+                <div class="text-right">
+                    <button type="submit" class="btn btn-primary  btn-lg">Add Worker</button>
+                </div>
+            </div>
+        </form>
+        <div class="navbar-fixed-bottom row-fluid">
+            <div class="navbar-inner">
+                <div class="container">
+                    <footer class="page-footer blue pt-4">
+                        <div class="footer-copyright text-center py-3">
+                            <p>� 2018 - Asp.NET Core Web Api</p>
+                        </div>
+                    </footer>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="Scripts/add_worker.js"></script>
+</body>
+
+</html>

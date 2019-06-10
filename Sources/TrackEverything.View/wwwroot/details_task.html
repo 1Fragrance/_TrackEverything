@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Task Info</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="content.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/index.html">Training Task</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/projects.html">Projects</a></li>
+                <li class="active"><a href="/tasks.html">Tasks</a></li>
+                <li><a href="/workers.html">Workers</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container body-content">
+        <div class="page-header">
+            <h1>Task Info</h1>
+        </div>
+        <dl class="dl-horizontal">
+            <dt>
+                <label>Name:</label>
+            </dt>
+            <dd>
+                <label id="taskName"></label>
+            </dd>
+            <dt>
+                <label>Hours Estimation:</label>
+            </dt>
+            <dd>
+                <label id="taskTime"></label>
+            </dd>
+            <dt>
+                <label>Creation Date:</label>
+            </dt>
+            <dd>
+                <label id="taskCreationDate"></label>
+            </dd>
+            <dt>
+                <label>Start At:</label>
+            </dt>
+            <dd>
+                <label id="taskStartAt"></label>
+            </dd>
+            <dt>
+                <label>Ends At:</label>
+            </dt>
+            <dd>
+                <label id="taskEndAt"></label>
+            </dd>
+            <dt>
+                <label>Status:</label>
+            </dt>
+            <dd>
+                <label id="taskStatus"></label>
+            </dd>
+            <dt>
+                <label>Project:</label>
+            </dt>
+            <dd>
+                <label id="taskProject"></label>
+            </dd>
+            <dt>
+                <label>Executors:</label>
+            </dt>
+            <dd>
+                <label id="taskExecutors"></label>
+            </dd>
+        </dl>
+
+        <div class="navbar-fixed-bottom row-fluid">
+            <div class="navbar-inner">
+                <div class="container">
+                    <footer class="page-footer blue pt-4">
+                        <div class="footer-copyright text-center py-3">
+                            <p>© 2018 - Asp.NET Core Web Api</p>
+                        </div>
+                    </footer>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="Scripts/details_task.js"></script>
+</body>
+
+</html>
