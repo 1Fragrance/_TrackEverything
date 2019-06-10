@@ -13,6 +13,7 @@ namespace TrackEverything.Tools.Logger
         private readonly CustomLoggerProviderConfiguration loggerConfig;
         private readonly string loggerName;
         private readonly string pathToFile;
+        private object _lock = new object();
 
         public CustomLogger(string name, CustomLoggerProviderConfiguration config)
         {
@@ -35,12 +36,18 @@ namespace TrackEverything.Tools.Logger
             Func<TState, Exception, string> formatter)
         {
             if (!IsEnabled(logLevel)) return;
-
-            var message = string.Format("{0}: {1} - {2}", logLevel.ToString(), DateTime.UtcNow,
-                formatter(state, exception));
-            WriteTextToFile(message);
+            if (formatter != null)
+            {
+                lock (_lock)
+                {
+                    var message = string.Format("{0}: {1} - {2}", logLevel.ToString(), DateTime.UtcNow,
+                        formatter(state, exception));
+                    WriteTextToFile(message);
+                }
+            }
         }
 
+        // TODO: Fix issue with streams
         private void WriteTextToFile(string message)
         {
             using (var streamWriter = new StreamWriter(pathToFile, true))
